@@ -3,9 +3,9 @@
 namespace App\Repositories\Eloquent;
 
 use App\Models\Dogs;
-use App\Repositories\interface\RepositoryInterface;
+use App\Repositories\interface\DogsRepositoryInterface;
 
-class DogRepository extends AbstractRepository implements RepositoryInterface
+class DogRepository extends AbstractRepository implements DogsRepositoryInterface
 {
     protected $model = Dogs::class;
 }

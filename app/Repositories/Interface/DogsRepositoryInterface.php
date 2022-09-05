@@ -2,7 +2,7 @@
 
 namespace App\Repositories\interface;
 
-interface RepositoryInterface{
+interface DogsRepositoryInterface{
     
     public function createRequest($request);
 

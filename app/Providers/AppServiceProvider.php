@@ -3,7 +3,9 @@
 namespace App\Providers;
 
 use App\Repositories\Eloquent\DogRepository;
-use App\Repositories\interface\RepositoryInterface;
+use App\Repositories\Eloquent\UserRepository;
+use App\Repositories\interface\DogsRepositoryInterface;
+use App\Repositories\interface\UserRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -15,7 +17,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(RepositoryInterface::class, DogRepository::class);
+        $this->app->bind(DogsRepositoryInterface::class, DogRepository::class);
+        $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
     }
 
     /**

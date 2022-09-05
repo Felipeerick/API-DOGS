@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Repositories\interface\RepositoryInterface as Contract;
+use App\Repositories\interface\DogsRepositoryInterface as ContractDog;
 use Illuminate\Http\Request;
 
 class DogsController extends Controller
 {
-    public function __construct(Contract $model)
+    public function __construct(ContractDog $model)
     {
         $this->model = $model;
     }

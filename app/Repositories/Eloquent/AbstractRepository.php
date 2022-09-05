@@ -41,4 +41,9 @@ class AbstractRepository
         return $this->model->where("name", "like", "%{$name}%")->get();
     }
 
+    public function whereEmail($email)
+    {
+        return $this->model->where("email", $email)->first();
+    }
+
 }
