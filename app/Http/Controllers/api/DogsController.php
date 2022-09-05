@@ -36,4 +36,9 @@ class DogsController extends Controller
     {
         $this->model->findID($id)->delete();
     }
+
+    public function search($name)
+    {
+        return $this->model->where("name", "like", "%{$name}%");
+    }
 }

@@ -33,7 +33,7 @@ class AbstractRepository
 
     public function findID($id)
     {
-        return $this->model->find($id);
+        return $this->model->findOrFail($id);
     }
 
 }
