@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\DogsController;
+use App\Http\Controllers\Api\DogsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,4 +19,4 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
 Route::apiResource('dogs', DogsController::class);
 
-/* Route::get('dogs/search/{name}', [DogsController::class, 'search']); */
+Route::get('dogs/search/{name}', [DogsController::class, 'search']);

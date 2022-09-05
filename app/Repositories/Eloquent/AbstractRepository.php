@@ -36,4 +36,9 @@ class AbstractRepository
         return $this->model->findOrFail($id);
     }
 
+    public function whereNameDog($name)
+    {
+        return $this->model->where("name", "like", "%{$name}%")->get();
+    }
+
 }

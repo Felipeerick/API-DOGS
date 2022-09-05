@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use App\Repositories\interface\RepositoryInterface as Contract;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,7 @@ class DogsController extends Controller
 
     public function store(Request $request)
     {
-        $this->model->createRequest($request->all());
+      return $this->model->createRequest($request->all());
     }
 
     public function show($id)
@@ -28,17 +29,17 @@ class DogsController extends Controller
 
     public function update(Request $request,  $id)
     {
-        $this->model->findID($id)->update($request->all());
+       return $this->model->findID($id)->update($request->all());
     }
 
 
     public function destroy($id)
     {
-        $this->model->findID($id)->delete();
+       return $this->model->findID($id)->delete();
     }
 
     public function search($name)
     {
-        return $this->model->where("name", "like", "%{$name}%");
+        return $this->model->whereNameDog($name);
     }
 }
