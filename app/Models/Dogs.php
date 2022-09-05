@@ -13,5 +13,6 @@ class Dogs extends Model
         'id',
         'name',
         'age',
+        'race'
     ];
 }

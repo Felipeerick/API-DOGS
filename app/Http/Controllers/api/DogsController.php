@@ -40,6 +40,6 @@ class DogsController extends Controller
 
     public function search($name)
     {
-        return $this->model->whereNameDog($name);
+        return $this->model->whereRaceDog($name);
     }
 }
