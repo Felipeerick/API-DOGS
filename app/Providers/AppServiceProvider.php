@@ -6,6 +6,7 @@ use App\Repositories\Eloquent\DogRepository;
 use App\Repositories\Eloquent\UserRepository;
 use App\Repositories\interface\DogsRepositoryInterface;
 use App\Repositories\interface\UserRepositoryInterface;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -28,6 +29,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        if(config('app.env') == 'production'){
+            URL::forceScheme('https');
+          }
     }
 }
