@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Api\DogsController;
+use App\Http\Controllers\DogsController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
