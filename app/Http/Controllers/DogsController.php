@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Repositories\interface\DogsRepositoryInterface as ContractDog;
+use App\Models\Dogs;
 use Illuminate\Http\Request;
 
 class DogsController extends Controller
 {
-    public function __construct(ContractDog $model)
+    public function __construct(Dogs $model)
     {
         $this->model = $model;
     }

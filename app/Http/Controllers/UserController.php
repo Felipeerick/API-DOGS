@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRequestLogin;
 use App\Http\Requests\UserRequestRegister;
-use App\Repositories\interface\UserRepositoryInterface as ContractUser;
+use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-   public function __construct(ContractUser $model)
+   public function __construct(User $model)
    {
      $this->model = $model;
    }
