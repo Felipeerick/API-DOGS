@@ -27,7 +27,7 @@ class DogsController extends Controller
 
         if(!$dogs){
             return response([
-                "message" => "Não existe esse dog",
+                "message" => "Nao existe esse dog",
             ]);
         }else{    
             return $dogs;
@@ -51,7 +51,7 @@ class DogsController extends Controller
 
         if(!$dogs){
             return response([
-                "message" => "Não existe esse dog",
+                "message" => "Nao existe esse dog",
             ]);
         }else{    
             return $dogs;
