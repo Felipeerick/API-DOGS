@@ -18,27 +18,27 @@ class DogsController extends Controller
 
     public function store(Request $request)
     {
-      return $this->model->createRequest($request->all());
+      return $this->model->create($request->all());
     }
 
     public function show($id)
     {
-        return $this->model->findID($id);
+        return $this->model->find($id);
     }
 
     public function update(Request $request,  $id)
     {
-       return $this->model->findID($id)->update($request->all());
+       return $this->model->find($id)->update($request->all());
     }
 
 
     public function destroy($id)
     {
-       return $this->model->findID($id)->delete();
+       return $this->model->find($id)->delete();
     }
 
     public function search($name)
     {
-        return $this->model->whereRaceDog($name);
+        return $this->model->where('name', 'like', "%{$name}%");
     }
 }

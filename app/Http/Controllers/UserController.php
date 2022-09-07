@@ -16,7 +16,7 @@ class UserController extends Controller
 
    public function register(UserRequestRegister $request)
    {
-        $data = $this->model->createRequest([
+        $data = $this->model->create([
           "name" => $request->name,
           "email" => $request->email,
           "password" => bcrypt($request->password),
