@@ -23,7 +23,15 @@ class DogsController extends Controller
 
     public function show($id)
     {
-        return $this->model->find($id);
+        $dogs = $this->model->find($id);
+
+        if(!$dogs){
+            return response([
+                "message" => "Não existe esse dog",
+            ]);
+        }else{    
+            return $dogs;
+        }
     }
 
     public function update(Request $request,  $id)
@@ -39,6 +47,15 @@ class DogsController extends Controller
 
     public function search($name)
     {
-        return $this->model->where('name', 'like', "%{$name}%");
+       $dogs = $this->model->where('name', 'like', "%{$name}%")->first();
+
+        if(!$dogs){
+            return response([
+                "message" => "Não existe esse dog",
+            ]);
+        }else{    
+            return $dogs;
+        }
+     
     }
 }
