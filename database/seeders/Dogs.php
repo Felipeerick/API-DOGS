@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Faker\Factory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -15,6 +14,6 @@ class Dogs extends Seeder
      */
     public function run()
     {
-        \App\Models\Dogs::factory(30)->create();
+        \App\Models\Dogs::factory(50)->create();
     }
 }

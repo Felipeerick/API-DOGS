@@ -37,7 +37,15 @@ class DogsController extends Controller
 
     public function update(Request $request,  $id)
     {
-       return $this->model->find($id)->update($request->all());
+       $dogs = $this->model->find($id);
+
+        if(!$dogs){
+            return response([
+                "message" => "Nao existe esse dog",
+            ]);
+        }else{    
+            return $dogs->update($request->all());
+        }
     }
 
 
