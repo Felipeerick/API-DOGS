@@ -43,7 +43,15 @@ class DogsController extends Controller
 
     public function destroy($id)
     {
-        return $this->model->find($id)->delete();
+        $dogs = $this->model->find($id);
+
+        if(!$dogs){
+            return response([
+                "message" => "Nao existe esse dog",
+            ]);
+        }else{    
+            return $dogs->delete();
+        }
     }
 
     public function search($name)
