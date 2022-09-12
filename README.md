@@ -17,15 +17,14 @@
 
 - Para procurar pela raça de um dog: http://localhost:8000/api/dogs/search/{nome da raça} com o método GET.
 
-- Obs: Para Editar, remover, adicionar e atualizar, é preciso estar autenticado!
+- Obs: Para editar, remover, adicionar, é preciso estar autenticado!
 
 
 ## Como Criar uma Conta para testar a autenticação?
 
-- Para Criar a conta usa-se http://localhost:8000/api/register com o método POST e será retornado
-o id do usuário, senha, email e o token de acesso.
+- Para Criar a conta usa-se http://localhost:8000/api/register com o método POST e passando os parâmetros name, password, email, password_confirmation e será retornado o token de cadastro.
 
-- Para logar usa-se http://localhost:8000/api/login com o método POST, passando email, password, password_confirmation, name e será retornado seu token novamente!
+- Para logar usa-se http://localhost:8000/api/login com o método POST, passando no parâmetro: email, password, name e será retornado seu token novamente e a partir desse token, você terá acesso as rotas com autenticação!
 
 
 ## Editando, removendo, criando e Atualizando, após logar
@@ -34,7 +33,7 @@ o id do usuário, senha, email e o token de acesso.
 
 - Removendo: http://localhost:8000/api/dogs/{id} com o método DELETE
 
-- Criando: http://localhost:8000/api/dogs com o método POST
+- Criando: http://localhost:8000/api/dogs com o método POST e os parâmetros name, race, age
 
 
 ## Como "Deslogar"?
