@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Dogs;
 use Illuminate\Http\Request;
+use Symfony\Component\Routing\Exception\RouteNotFoundException;
 
 class DogsController extends Controller
 {
@@ -42,7 +43,7 @@ class DogsController extends Controller
 
     public function destroy($id)
     {
-       return $this->model->find($id)->delete();
+        return $this->model->find($id)->delete();
     }
 
     public function search($name)

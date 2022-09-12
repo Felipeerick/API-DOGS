@@ -34,7 +34,7 @@ class UserController extends Controller
 
    public function login(UserRequestLogin $request)
    {
-      $user = $this->model->whereEmail($request->email);
+      $user = $this->model->where('email', $request->email)->first();
 
       if(!$user || !Hash::check($request->password, $user->password)){
           return response([
